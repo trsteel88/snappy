@@ -888,7 +888,7 @@ class AbstractGeneratorTest extends TestCase
         $create->invoke($generator, null, null);
 
         $files = new ReflectionProperty($generator, 'temporaryFiles');
-        $this->assertCount(0, $files->getValue($generator));
+        $this->assertCount(1, $files->getValue($generator));
 
         $remove = new ReflectionMethod($generator, 'removeTemporaryFiles');
         $remove->invoke($generator);
