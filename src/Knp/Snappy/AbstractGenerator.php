@@ -512,6 +512,7 @@ abstract class AbstractGenerator implements GeneratorInterface, LoggerAwareInter
             \file_put_contents($filename, $content);
         }
 
+        // track temp file even if we don't write to it, the method calling this creation may write to it
         $this->temporaryFiles[] = $filename;
 
         return $filename;
