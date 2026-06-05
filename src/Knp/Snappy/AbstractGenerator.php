@@ -510,8 +510,9 @@ abstract class AbstractGenerator implements GeneratorInterface, LoggerAwareInter
 
         if (null !== $content) {
             \file_put_contents($filename, $content);
-            $this->temporaryFiles[] = $filename;
         }
+
+        $this->temporaryFiles[] = $filename;
 
         return $filename;
     }
